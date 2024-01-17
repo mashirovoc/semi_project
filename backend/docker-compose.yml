@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16.1
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: johndoe
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: database_development
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
